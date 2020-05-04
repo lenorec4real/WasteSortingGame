@@ -8,10 +8,7 @@ public class PaperBin extends Bin {
 
     public PaperBin() {
         super("Paper Bin",500);
+        this.color = COLOR;
     }
 
-    @Override
-    public void draw(Graphics g) {
-
-    }
 }

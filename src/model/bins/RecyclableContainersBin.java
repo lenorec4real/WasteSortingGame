@@ -7,10 +7,8 @@ public class RecyclableContainersBin extends Bin {
 
     public RecyclableContainersBin() {
         super("Recyclable Containers Bin",300);
+        this.color = COLOR;
     }
 
-    @Override
-    public void draw(Graphics g) {
 
-    }
 }

@@ -8,10 +8,7 @@ public class GarbageBin extends Bin {
 
     public GarbageBin() {
         super("Garbage Bin",700);
+        this.color = COLOR;
     }
 
-    @Override
-    public void draw(Graphics g) {
-
-    }
 }

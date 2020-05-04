@@ -1,25 +1,25 @@
 package model.bins;
 
+import ui.WasteSortingGame;
+
 import java.awt.*;
 
 public abstract class Bin {
 
-    public static final int HEIGHT = 50;
-    public static final int WIDTH = 40;
-    protected static final int DY = 1;
     //width & height
-    protected static final int SIZE_X = 30;
+    protected static final int SIZE_X = 100;
     protected static final int SIZE_Y = 90;
     //coordinates
     protected int x;
     protected int y;
-
+    protected Color color;
 
     protected String name;
 
     public Bin(String name, int x) {
         this.name = name;
         this.x = x;
+        this.y = WasteSortingGame.HEIGHT- SIZE_Y / 2;
     }
 
     public String getName() {
@@ -28,13 +28,16 @@ public abstract class Bin {
 
     public int getSizeX() { return SIZE_X; }
 
-    public int getSizeY() { return SIZE_Y; }
+    public static int getSizeY() { return SIZE_Y; }
 
     public int getX() { return x;}
 
     public int getY() { return y;}
 
-
-    public abstract void draw(Graphics g);
-
+    public void render(Graphics g) {
+        Color savedCol = g.getColor();
+        g.setColor(color);
+        g.fillRect(x - SIZE_X / 2, WasteSortingGame.HEIGHT - SIZE_Y / 2, SIZE_X, SIZE_Y);
+        g.setColor(savedCol);
+    }
 }
