@@ -1,6 +1,6 @@
-package com.company.model.bins;
+package model.bins;
 
-import com.company.model.wasteItems.Letter;
+import model.wasteItems.Letter;
 
 import java.awt.*;
 import java.util.List;
@@ -12,7 +12,7 @@ public class FoodScrapBin extends Bin {
     private static final Color COLOR = new Color(16, 188, 83);
 
     public FoodScrapBin() {
-        super("Food Scrap Bin");
+        super("Food Scrap Bin",100);
     }
 
 

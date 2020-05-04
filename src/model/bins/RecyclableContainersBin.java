@@ -1,6 +1,4 @@
-package com.company.model.bins;
-
-import com.company.model.bins.Bin;
+package model.bins;
 
 import java.awt.*;
 
@@ -8,7 +6,7 @@ public class RecyclableContainersBin extends Bin {
     private static final Color COLOR = new Color(184, 184, 184);
 
     public RecyclableContainersBin() {
-        super("Recyclable Containers Bin");
+        super("Recyclable Containers Bin",300);
     }
 
     @Override

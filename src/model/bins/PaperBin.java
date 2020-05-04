@@ -1,14 +1,13 @@
-package com.company.model.bins;
-
-import com.company.model.bins.Bin;
+package model.bins;
 
 import java.awt.*;
 
 public class PaperBin extends Bin {
 
     private static final Color COLOR = new Color(46, 81, 175);
+
     public PaperBin() {
-        super("Paper Bin");
+        super("Paper Bin",500);
     }
 
     @Override

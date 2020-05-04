@@ -1,9 +1,11 @@
-package com.company.model.bins;
+package model.bins;
 
 import java.awt.*;
 
 public abstract class Bin {
 
+    public static final int HEIGHT = 50;
+    public static final int WIDTH = 40;
     protected static final int DY = 1;
     //width & height
     protected static final int SIZE_X = 30;
@@ -15,8 +17,9 @@ public abstract class Bin {
 
     protected String name;
 
-    public Bin(String name) {
+    public Bin(String name, int x) {
         this.name = name;
+        this.x = x;
     }
 
     public String getName() {
