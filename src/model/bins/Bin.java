@@ -1,6 +1,6 @@
 package model.bins;
 
-import ui.WasteSortingGame;
+import model.WSGame;
 
 import java.awt.*;
 
@@ -19,7 +19,7 @@ public abstract class Bin {
     public Bin(String name, int x) {
         this.name = name;
         this.x = x;
-        this.y = WasteSortingGame.HEIGHT- SIZE_Y / 2;
+        this.y = WSGame.HEIGHT- SIZE_Y / 2;
     }
 
     public String getName() {
@@ -37,7 +37,7 @@ public abstract class Bin {
     public void render(Graphics g) {
         Color savedCol = g.getColor();
         g.setColor(color);
-        g.fillRect(x - SIZE_X / 2, WasteSortingGame.HEIGHT - SIZE_Y / 2, SIZE_X, SIZE_Y);
+        g.fillRect(x - SIZE_X / 2, WSGame.HEIGHT - SIZE_Y / 2, SIZE_X, SIZE_Y);
         g.setColor(savedCol);
     }
 }
