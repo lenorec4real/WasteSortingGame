@@ -22,22 +22,24 @@ public abstract class Bin {
         this.y = WSGame.HEIGHT- SIZE_Y / 2;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getSizeX() { return SIZE_X; }
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public int getSizeX() { return SIZE_X; }
 
     public static int getSizeY() { return SIZE_Y; }
-
-    public int getX() { return x;}
-
-    public int getY() { return y;}
+//
+//    public int getX() { return x;}
+//
+//    public int getY() { return y;}
 
     public void render(Graphics g) {
         Color savedCol = g.getColor();
         g.setColor(color);
-        g.fillRect(x - SIZE_X / 2, WSGame.HEIGHT - SIZE_Y / 2, SIZE_X, SIZE_Y);
+        g.fillRect(x - SIZE_X / 2, y, SIZE_X, SIZE_Y);
+        g.setColor(Color.WHITE);
+        g.drawString(name,x- SIZE_X / 2,y);
         g.setColor(savedCol);
     }
 }

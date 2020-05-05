@@ -27,7 +27,7 @@ public class GamePanel extends JPanel {
 
         renderGame(g);
 
-        if (game.checkGameOver()){
+        if (game.isOver()){
             gameOver(g);
         }
     }
@@ -37,8 +37,8 @@ public class GamePanel extends JPanel {
     // effects:  draws "game over" and replay instructions onto g
     private void gameOver(Graphics g) {
         Color saved = g.getColor();
-//        g.setColor(new Color( 0, 0, 0));
-//        g.setFont(new Font("Arial", 20, 20));
+        g.setColor(new Color( 0, 0, 0));
+        g.setFont(new Font("Arial", 20, 20));
         FontMetrics fm = g.getFontMetrics();
         centreString(OVER, g, fm, WSGame.HEIGHT / 2);
         centreString(REPLAY, g, fm, WSGame.HEIGHT / 2 + 40);

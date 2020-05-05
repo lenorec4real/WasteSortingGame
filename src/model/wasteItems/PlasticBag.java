@@ -8,6 +8,7 @@ public class PlasticBag extends WasteItem {
         super(x);
         belongedBin = belongsTo;
         codeNum = code;
+        this.name = "Plastic Bag";
     }
 
 }

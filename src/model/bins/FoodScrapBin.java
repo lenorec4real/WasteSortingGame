@@ -1,14 +1,9 @@
 package model.bins;
 
-import model.wasteItems.Letter;
-
 import java.awt.*;
-import java.util.List;
 
 public class FoodScrapBin extends Bin {
 
-    private static final List<Letter> itemsBelong = null;
-//    public static final int DY = 2;
     private static final Color COLOR = new Color(16, 188, 83);
 
     public FoodScrapBin() {

@@ -9,6 +9,7 @@ public class GlassBottle extends WasteItem {
         super(x);
         belongedBin = belongsTo;
         codeNum = code;
+        this.name = "Glass bottle";
     }
 
 }
