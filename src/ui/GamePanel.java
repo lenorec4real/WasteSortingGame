@@ -29,6 +29,7 @@ public class GamePanel extends JPanel {
 
         if (game.isOver()){
             gameOver(g);
+
         }
     }
 
