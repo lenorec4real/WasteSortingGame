@@ -1,5 +1,10 @@
 package model.wasteItems;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+
 public class PlasticBag extends WasteItem {
     private static final int code = 4;
     public static final String belongsTo = "Garbage Bin";
@@ -15,6 +20,18 @@ public class PlasticBag extends WasteItem {
         codeNum = code;
         this.name = "Plastic Bag";
         imagePath = IMAGE_PATH;
+        try {
+            i = ImageIO.read(new File(imagePath)).getScaledInstance(SIZE_X,SIZE_Y, Image.SCALE_DEFAULT);
+        } catch (IOException e) {
+            System.out.println("Fail to read image of items");
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    protected String getPath() {
+        return IMAGE_PATH;
     }
 
 }

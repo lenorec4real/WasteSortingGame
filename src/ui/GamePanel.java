@@ -2,29 +2,42 @@ package ui;
 
 import model.WSGame;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 // The game is rendered here.
 
 public class GamePanel extends JPanel {
     private static final String OVER = "Game Over!";
     private static final String REPLAY = "R to replay";
+
+    //<a href="https://www.freepik.com/free-photos-vectors/tree">
+    // Tree vector created by upklyak - www.freepik.com</a>
+    private static final String imagePath = "src/data/background.png";
     private WSGame game;
+    private Image bgImg;
 
     // Constructs a game panel
     // effects:  sets size and background colour of panel,
     //           updates this with the game to be displayed
     public GamePanel(WSGame g) {
         setPreferredSize(new Dimension(WSGame.WIDTH, WSGame.HEIGHT));
-        setBackground(Color.GRAY);
         this.game = g;
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
+        try {
+            bgImg = ImageIO.read(new File(imagePath)).getScaledInstance(WSGame.WIDTH,WSGame.HEIGHT,Image.SCALE_DEFAULT);
+        } catch (IOException e) {
+            System.out.print("fail to load background image");
+            e.printStackTrace();
+        }
+        g.drawImage(bgImg,0,0,null);
         renderGame(g);
 
         if (game.isOver()){

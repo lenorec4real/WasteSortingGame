@@ -17,6 +17,11 @@ public class GlassBottle extends WasteItem {
         imagePath = IMAGE_PATH;
     }
 
+    @Override
+    protected String getPath() {
+        return IMAGE_PATH;
+    }
+
 //    @Override
 //    public void render(Graphics g) throws IOException {
 //        Color savedCol = g.getColor();

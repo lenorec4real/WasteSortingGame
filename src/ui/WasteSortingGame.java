@@ -10,7 +10,7 @@ import java.awt.event.KeyEvent;
 public class WasteSortingGame extends JFrame {
     private WSGame game;
     private GamePanel gamePanel;
-    private static final int INTERVAL = 10;
+    private static final int INTERVAL = 5;
     private Timer timer;
     private ScorePanel scorePanel;
 
