@@ -16,10 +16,9 @@ public class WasteSortingGame extends JFrame {
 
     // Constructs main window
     // effects: sets up window in which Space Invaders game will be played
-    public WasteSortingGame() {
+    public  WasteSortingGame() {
         super("Waste Sorting Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setUndecorated(true);
         game = new WSGame();
         gamePanel = new GamePanel(game);
         scorePanel = new ScorePanel(game);
@@ -33,8 +32,8 @@ public class WasteSortingGame extends JFrame {
         timer.start();
         game.addObserver(scorePanel);
     }
-    
 
+    // switch to the given panel
 
     private void centreOnScreen() {
         Dimension scrn = Toolkit.getDefaultToolkit().getScreenSize();
@@ -57,12 +56,14 @@ public class WasteSortingGame extends JFrame {
     //           INTERVAL milliseconds
     private void addTimer() {
         timer = new Timer(INTERVAL, ae -> {
-            game.update();
+            game.update(this);
             gamePanel.repaint();
-//				scorePanel.update();
         });
     }
+    public void stopTimer() {
+        timer.stop();
+    }
     public static void main(String[] args) {
-        new WasteSortingGame();
+        new InstructionFrame();
     }
 }

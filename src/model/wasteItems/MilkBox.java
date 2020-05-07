@@ -2,7 +2,7 @@ package model.wasteItems;
 
 public class MilkBox extends WasteItem {
 
-    private static final String IMAGE_PATH = "src/data/milk-box.png";
+    private static final String IMAGE_PATH = "src/data/images/waste_items/milk-box.png";
     public static final String belongsTo = "Recyclable Containers Bin";
     private static final int code = 5;
 

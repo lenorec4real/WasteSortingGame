@@ -16,7 +16,7 @@ public class GamePanel extends JPanel {
 
     //<a href="https://www.freepik.com/free-photos-vectors/tree">
     // Tree vector created by upklyak - www.freepik.com</a>
-    private static final String imagePath = "src/data/background.png";
+    private static final String imagePath = "src/data/images/background.png";
     private WSGame game;
     private Image bgImg;
 
@@ -26,23 +26,23 @@ public class GamePanel extends JPanel {
     public GamePanel(WSGame g) {
         setPreferredSize(new Dimension(WSGame.WIDTH, WSGame.HEIGHT));
         this.game = g;
-    }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
         try {
             bgImg = ImageIO.read(new File(imagePath)).getScaledInstance(WSGame.WIDTH,WSGame.HEIGHT,Image.SCALE_DEFAULT);
         } catch (IOException e) {
             System.out.print("fail to load background image");
             e.printStackTrace();
         }
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
         g.drawImage(bgImg,0,0,null);
         renderGame(g);
 
         if (game.isOver()){
             gameOver(g);
-
         }
     }
 

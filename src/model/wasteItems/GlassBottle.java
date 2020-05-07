@@ -7,7 +7,7 @@ public class GlassBottle extends WasteItem {
     // Icons made by <a href="https://www.flaticon.com/authors/freepik"
     // title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
     // title="Flaticon"> www.flaticon.com</a>
-    private static final String IMAGE_PATH = "src/data/thin-bottle-of-water.png";
+    private static final String IMAGE_PATH = "src/data/images/waste_items/thin-bottle-of-water.png";
 
     public GlassBottle(int x) {
         super(x);

@@ -20,6 +20,7 @@ public abstract class Bin {
 
     protected String name;
     protected Image i;
+    private int lineHeight;
 
 
 
@@ -54,12 +55,17 @@ public abstract class Bin {
     public void render(Graphics g){
         Color savedCol = g.getColor();
         g.setColor(color);
-//        g.fillRect(x - SIZE_X / 2, y, SIZE_X, SIZE_Y);
-//        Image i = ImageIO.read(new File(imagePath)).getScaledInstance(SIZE_X,SIZE_Y,Image.SCALE_DEFAULT);
-        g.drawImage(i,x- SIZE_X / 2, y - SIZE_Y / 2,null);
-        g.setColor(Color.WHITE);
-        g.setFont(new Font("Arial Black", 1,15));
-        g.drawString(name,x- SIZE_X / 2,y);
+        lineHeight = g.getFontMetrics().getHeight();
+        drawString(g,name,x- SIZE_X / 2,y);
+        g.drawImage(i,x- SIZE_X / 2, y - SIZE_Y ,null);
+        // instead to g.drawString, call method drawString to split the lines
         g.setColor(savedCol);
+    }
+
+    private void drawString(Graphics g, String str, int x, int y) {
+        g.setColor(color.WHITE);
+        g.setFont(new Font("Arial Black", 1,14));
+        for (String line : name.split("\n"))
+            g.drawString(line, x, y += lineHeight);
     }
 }
