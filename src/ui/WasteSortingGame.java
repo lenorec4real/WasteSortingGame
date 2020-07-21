@@ -24,14 +24,14 @@ public class WasteSortingGame extends JFrame {
         scorePanel = new ScorePanel(game);
         add(gamePanel);
         add(scorePanel, BorderLayout.NORTH);
-        addKeyListener(new KeyHandler());
         pack();
+        addKeyListener(new KeyHandler());
         centreOnScreen();
         setVisible(true);
         addTimer();
         timer.start();
         game.addObserver(scorePanel);
-    }
+}
 
     // switch to the given panel
 
@@ -63,6 +63,7 @@ public class WasteSortingGame extends JFrame {
     public void stopTimer() {
         timer.stop();
     }
+
     public static void main(String[] args) {
         new InstructionFrame();
     }

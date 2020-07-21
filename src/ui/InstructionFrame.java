@@ -28,6 +28,7 @@ public class InstructionFrame extends JFrame {
         startButton = new JButton(gameStarts);
         instPanel = new JPanel();
         instPanel.setLayout(new BoxLayout(instPanel, BoxLayout.Y_AXIS));
+
         startButton.setActionCommand(gameStarts);
         startButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 //        thisPanel = this;
@@ -35,12 +36,20 @@ public class InstructionFrame extends JFrame {
            dispose();
             new WasteSortingGame();
         });
+
         String instructions = "Please choose from a difficulty level: ";
-        JLabel instLabel = new JLabel(instructions);
-        add(instLabel);
+        String welcome = "Welcome to the Waste Sorting Game!";
+        String inst1 = "Use <- or -> key to control the position";
+        String inst2 = "Use down arrow or space key to speed up waste falling";
+
+        addALabel(welcome,instPanel);
+        addALabel(inst1,instPanel);
+        addALabel(inst2,instPanel);
+        addALabel(instructions,instPanel);
         createButtons();
         instPanel.add(startButton);
         add(instPanel, BorderLayout.CENTER);
+        pack();
     }
 
     private void createButtons() {
@@ -59,6 +68,12 @@ public class InstructionFrame extends JFrame {
 
             instPanel.add(btn);
         }
+    }
+
+    private void addALabel(String text, Container container) {
+        JLabel label = new JLabel(text);
+        label.setAlignmentX(Component.CENTER_ALIGNMENT);
+        container.add(label);
     }
 
     private void centreOnScreen() {
