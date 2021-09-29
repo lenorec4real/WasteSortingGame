@@ -8,6 +8,7 @@ import java.awt.*;
 public class GameOverFrame extends JFrame {
 
     private JButton restartButton;
+    private JButton quitButton;
     private JLabel results;
     private JPanel gameOverPanel;
     private int sorted;
@@ -28,7 +29,7 @@ public class GameOverFrame extends JFrame {
         setVisible(true);
         sorted = game.getCorrectItems();
         misplaced = game.getIncorrectItems();
-//        gameOverPanel.setLayout(new BorderLayout());
+        gameOverPanel.setLayout(new BoxLayout(gameOverPanel, BoxLayout.Y_AXIS));
         centreOnScreen();
 //        String resultString = myLabel.setText("<html><body>with<br>linebreak</body></html>");
         String resultString = "<html>You successfully sorted " + sorted +" waste items,<br/> you misplaced "
@@ -37,14 +38,21 @@ public class GameOverFrame extends JFrame {
 
 //        results.setPreferredSize(new Dimension(100,50));
         restartButton = new JButton("Play again!");
+        quitButton = new JButton("Quit");
 
         restartButton.addActionListener(e -> {
             dispose();
             new InstructionFrame();
         });
+        quitButton.addActionListener(e -> {
+            dispose();
+        });
 
-        gameOverPanel.add(results, BorderLayout.PAGE_START);
-        gameOverPanel.add(restartButton,BorderLayout.PAGE_END);
+        // gameOverPanel.add(results, BorderLayout.PAGE_START);
+        // gameOverPanel.add(restartButton,BorderLayout.PAGE_END);
+        gameOverPanel.add(results);
+        gameOverPanel.add(restartButton);
+        gameOverPanel.add(quitButton);
         add(gameOverPanel);
         pack();
     }
