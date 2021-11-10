@@ -209,29 +209,29 @@ public class WSGame extends Observable {
   
   public boolean correctlySorted() {
     String bin = this.itemOnScreen.getBelongedBin();
-    String str1;
-    switch ((str1 = bin).hashCode()) {
-      case 0:
-        if (!str1.equals("Paper Bin"))
-          break; 
+    String str1 = bin;
+    switch (bin) {
+      case "Paper Bin":
+        // if (!str1.equals("Paper Bin"))
+        //   break; 
         if (this.itemOnScreen.getX() == 500)
           return true; 
         break;
-      case 1:
-        if (!str1.equals("Food Scrap Bin"))
-          break; 
+      case "Food Scrap Bin":
+        // if (!str1.equals("Food Scrap Bin"))
+        //   break; 
         if (this.itemOnScreen.getX() == 100)
           return true; 
         break;
-      case 2:
-        if (!str1.equals("Recyclable Containers Bin"))
-          break; 
+      case "Recyclable Containers Bin":
+        // if (!str1.equals("Recyclable Containers Bin"))
+        //   break; 
         if (this.itemOnScreen.getX() == 300)
           return true; 
         break;
-      case 3:
-        if (!str1.equals("Garbage Bin"))
-          break; 
+      case "Garbage Bin":
+        // if (!str1.equals("Garbage Bin"))
+        //   break; 
         if (this.itemOnScreen.getX() == 700)
           return true; 
         break;
